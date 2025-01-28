@@ -10,6 +10,21 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 
+/** this is the AppUser Class that implements the UserDetails Interface
+ * contains the following attributes
+ *  Long Id to keep track of User accounts in the database
+ *  String firstName and String lastName of User accounts
+ *  String email to use as usernames
+ *  String Passwords to be Encoded and used as keys for user accounts
+ *  AppUserRole appUserRole to keep differentiate between normal accounts and admin accounts
+ *  which is also an Enum with two roles USER,ADMIN
+ *  two boolean variables locked and enabled to keep tracked of locked and enabled accounts.
+ *  Several annotations are used such as @Entity and @Table to map onto the table
+ * @Data is used to reduce boilerplate codes of setters,getters and constructors
+ * Both @SequenceGenerator and @GeneratedValue to create a sequence of ID's
+ * The UserDetails interface is springSecurity for when users are loging in.
+ * used to Validate credentials and check account roles
+ * */
 @Entity
 @Table(name = "app_user")
 @Data
