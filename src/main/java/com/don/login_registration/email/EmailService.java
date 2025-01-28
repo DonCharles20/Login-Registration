@@ -11,6 +11,10 @@ import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import lombok.AllArgsConstructor;
 
+/**
+ * This class is used to send email to the user for email verification.
+ * It implements the EmailSender interface
+ * */
 @Service
 @AllArgsConstructor
 public class EmailService implements EmailSender {

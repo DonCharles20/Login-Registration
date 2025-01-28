@@ -7,7 +7,15 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
-
+/**
+ * This interface is a repository for the AppUser class which extends the JpaRepository
+ * using the AppUser class and the Long type as the id
+ * The @Repository annotation is used to indicate that the class provides
+ * the mechanism for storage, retrieval, search, update and delete operation on objects.
+ * The @Transactional annotation is used to indicate that the class is transactional
+ * The @Modifying annotation is used to indicate that the method modifies the state of the database
+ *
+ * */
 @Repository
 @Transactional(readOnly = true)
 public interface AppUserRepository extends JpaRepository<AppUser,Long> {

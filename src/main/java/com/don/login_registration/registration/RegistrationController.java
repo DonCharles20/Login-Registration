@@ -6,17 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+/**
+ * This class is a controller class that handles the registration of a user
+ * It is a REST controller that listens to the /api/v1/registration endpoint
+ * It uses the @RestController annotation to mark it as a controller class and
+ * @RequestMapping annotation to map the endpoint to the class
+ * uses two instance variables to hold the AppUserService and RegistrationService
+ * */
 @RestController
 @RequestMapping("api/v1/registration")
 public class RegistrationController {
 
-    @Autowired
     private final AppUserService service;
-
-    @Autowired
     private final RegistrationService serviceRequest;
-
     public RegistrationController(AppUserService service, RegistrationService serviceRequest) {
         this.service = service;
         this.serviceRequest = serviceRequest;

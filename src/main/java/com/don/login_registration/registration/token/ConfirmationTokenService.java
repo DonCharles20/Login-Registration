@@ -7,7 +7,9 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
-
+/**
+ * A Service class to hold business logic for the ConfirmationToken class
+ * */
 @Service
 @AllArgsConstructor
 public class ConfirmationTokenService {

@@ -13,6 +13,12 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.SequenceGenerator;
 import lombok.Data;
+
+/**
+ * This class is used to create a token for email verification
+ * this is mapped to the database table to store the token
+ * each token is associated with a user
+ * */
 @Entity
 @Data
 public class ConfirmationToken {
