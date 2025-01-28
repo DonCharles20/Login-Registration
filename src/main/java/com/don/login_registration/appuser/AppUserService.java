@@ -49,7 +49,7 @@ public class AppUserService implements UserDetailsService {
         boolean userExists = appUserRepository.findByEmail(appUser.getEmail())
                 .isPresent();
         if (userExists) {
-            AppUser existingUser = appUserRepository.findByEmail(appUser.getEmail()).orElseThrow(() -> new IllegalStateException("User not found"));
+            AppUser existingUser = appUserRepository.findByEmail(appUser.getEmail()).get();
             if (!existingUser.getEnabled()) {
                 confirmationTokenService.saveConfirmationToken(createToken(existingUser));
                 throw new IllegalStateException("User already registered but not confirmed. Confirmation token resent.");
